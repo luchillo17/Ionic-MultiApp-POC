@@ -1,3 +1,11 @@
 {
-  "projects": {}
+  "projects": {
+    "ku-mix": {
+      "name": "app",
+      "integrations": {},
+      "type": "angular",
+      "root": "apps/ku-mix"
+    }
+  },
+  "defaultProject": "ku-mix"
 }

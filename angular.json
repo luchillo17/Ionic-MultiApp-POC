@@ -49,10 +49,45 @@
             "aot": true,
             "assets": [
               "apps/ku-mix/src/favicon.ico",
-              "apps/ku-mix/src/assets"
+              "apps/ku-mix/src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
-              "apps/ku-mix/src/styles.scss"
+              "apps/ku-mix/src/styles.scss",
+              {
+                "input": "node_modules/@ionic/angular/css/normalize.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/structure.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/typography.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/core.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/padding.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/float-elements.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/text-alignment.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/text-transformation.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/flex-utils.css"
+              },
+              {
+                "input": "apps/ku-mix/src/theme/variables.css"
+              }
             ],
             "scripts": []
           },
@@ -103,9 +138,34 @@
           "options": {
             "browserTarget": "ku-mix:build"
           }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "ku-mix:ionic-cordova-build",
+            "devServerTarget": "ku-mix:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "ku-mix:ionic-cordova-build:production",
+              "devServerTarget": "ku-mix:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "ku-mix:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ku-mix:build:production"
+            }
+          }
         }
       }
-    }},
+    }
+  },
   "cli": {
     "analytics": false
   },
