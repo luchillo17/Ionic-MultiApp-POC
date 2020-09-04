@@ -1,8 +1,12 @@
 {
   "projects": {
     "ku-mix": {
-      "name": "app",
-      "integrations": {},
+      "name": "ku-mix",
+      "integrations": {
+        "cordova": {
+          "root": "apps/ku-mix"
+        }
+      },
       "type": "angular",
       "root": "apps/ku-mix"
     }
