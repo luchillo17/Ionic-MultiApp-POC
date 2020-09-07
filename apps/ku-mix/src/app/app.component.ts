@@ -6,12 +6,8 @@ import { MenuController } from '@ionic/angular';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   constructor(private menu: MenuController) {}
-
-  ngOnInit(): void {
-    this.openFirst();
-  }
 
   openFirst(): void {
     this.menu.enable(true, 'first');
